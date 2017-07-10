@@ -1,5 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #content {
-  border: 1px solid black;
   margin: 50px auto;
   display: flex;
   max-width: 850px;
@@ -14,8 +18,41 @@
   justify-content: space-around;
 }
 
+#logoBar {
+  height: 65px;
+  position: relative;
+}
+
+#header {
+
+}
+
+.vertical-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#pageBar {
+  padding: 10px;
+  margin: 0 auto;
+  list-style-type: none;
+  background-color: #3b3b3b;
+  letter-spacing: 1px;
+  font-family: 'Oswald', sans-serif;
+  color: gray;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-align: center;
+}
+
+#pageBar > li {
+  display: inline;
+}
+
 .article {
-  width: 500px;
+  width: 450px;
   height: 480px;
   border: 1px solid black;
   margin-bottom: 25px;
