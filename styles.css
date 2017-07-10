@@ -1,0 +1,28 @@
+#content {
+  border: 1px solid black;
+  margin: 50px auto;
+  display: flex;
+  max-width: 850px;
+  padding: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.article {
+  width: 500px;
+  height: 480px;
+  border: 1px solid black;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 1000px) {
+  .article {
+    width: 400px;
+  }
+}
