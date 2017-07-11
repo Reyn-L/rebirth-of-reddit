@@ -12,7 +12,7 @@ getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
   console.log(data.data.children[1].data);
 
   let art = document.createElement('div');
-  art.className = "article test";
+  art.className = "article";
 
   let thumbnail = document.createElement('IMG');
   thumbnail.src = data.data.children[1].data.thumbnail;
@@ -21,7 +21,7 @@ getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
 
   let head3 = document.createElement('span');
   head3.innerHTML = data.data.children[1].data.title;
-  head3.className = "title test";
+  head3.className = "title";
   art.appendChild(head3);
 
   let ul = document.createElement('ul');

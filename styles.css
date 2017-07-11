@@ -5,13 +5,6 @@
 
 body {
   background-image: url(assets/bg.jpg);
-
-.link {
-  cursor: pointer;
-}
-
-.link:hover {
-  color: #e65c00;
 }
 
 #content {
@@ -25,7 +18,7 @@ body {
   display: -webkit-flex;
   display: flex;
 
-  -webkit-flex-flow: row wrap;
+ -webkit-flex-flow: row wrap;
   justify-content: space-around;
 }
 
@@ -49,7 +42,7 @@ body {
   padding: 10px;
   margin: 0 auto;
   list-style-type: none;
-  background-color: #3b3b3b;
+  background-color: #3b3b3b ;
   letter-spacing: 1px;
   font-family: 'Oswald', sans-serif;
   color: gray;
@@ -63,31 +56,20 @@ body {
 }
 
 .article {
-
   width: 270px;
   height: 375px;
   background-color: white;
   overflow: hidden;
-
-
-  width: 450px;
-  height: 480px;
-
-  width: 285px;
-  height: 380px;
-
-  border: 5px solid transparent;
   margin-bottom: 25px;
   padding: 25px;
   font-family: 'Oswald', sans-serif;
-
 }
 
 .title {
   font-size: 20px;
   font-weight: 600;
-  color: #333333;
-
+  color: #333333 ;
+}
 
 .image {
   width: 100%;
@@ -98,7 +80,7 @@ body {
 .info {
   list-style-type: none;
   padding: 7px 0 15px;
-  color: #999999;
+  color: #999999 ;
   font-size: 13px;
   font-family: 'Lato', sans-serif;
 }
@@ -111,7 +93,7 @@ body {
 .description {
   overflow: hidden;
   font-size: 14px;
-  color: #333333;
+  color: #333333 ;
   font-family: 'Lato';
 }
 
@@ -120,4 +102,112 @@ body {
     width: 400px;
     height: 480px;
   }
+}
+
+benkwok [4:33 PM]
+added this JavaScript/JSON snippet
+* {
+ margin: 0;
+ padding: 0;
+}
+​
+body {
+ background-image: url(assets/bg.jpg);
+}
+​
+#content {
+ margin: 50px auto;
+ display: flex;
+ max-width: 850px;
+ padding: 0;
+ display: -webkit-box;
+ display: -moz-box;
+ display: -ms-flexbox;
+ display: -webkit-flex;
+ display: flex;
+​
+ -webkit-flex-flow: row wrap;
+ justify-content: space-around;
+}
+​
+#logoBar {
+ height: 65px;
+ position: relative;
+}
+​
+#logoBar {
+ background-color: white;
+}
+​
+.vertical-align {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+​
+#pageBar {
+ padding: 10px;
+ margin: 0 auto;
+ list-style-type: none;
+ background-color: #3b3b3b;
+ letter-spacing: 1px;
+ font-family: 'Oswald', sans-serif;
+ color: gray;
+ text-transform: uppercase;
+ font-size: 18px;
+ text-align: center;
+}
+​
+#pageBar > li {
+ display: inline;
+}
+​
+.article {
+ width: 270px;
+ height: 375px;
+ background-color: white;
+ overflow: hidden;
+ margin-bottom: 25px;
+ padding: 25px;
+ font-family: 'Oswald', sans-serif;
+}
+​
+.title {
+ font-size: 20px;
+ font-weight: 600;
+ color: #333333;
+}
+​
+.image {
+ width: 100%;
+ height: 165px;
+ margin-bottom: 10px;
+}
+​
+.info {
+ list-style-type: none;
+ padding: 7px 0 15px;
+ color: #999999;
+ font-size: 13px;
+ font-family: 'Lato', sans-serif;
+}
+​
+.info > li {
+ display: inline;
+ padding: 3px;
+}
+​
+.description {
+ overflow: hidden;
+ font-size: 14px;
+ color: #333333;
+ font-family: 'Lato';
+}
+​
+@media (min-width: 1000px) {
+ .article {
+  width: 400px;
+  height: 480px;
+ }
 }
