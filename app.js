@@ -9,13 +9,8 @@ function getJSON(method, url, cb) {
 }
 
 getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
-  console.log(data.data.children[1].data.author);
-  console.log(data.data.children[1].data.title);
-  console.log(data.data.children[1].data.thumbnail);
-  console.log(data.data.children[1].data.ups);
-  console.log(data.data.children[6].data.selftext);
-  console.log(data.data.children[1].data.url);
-  console.log(data.data.children[1].data.created_utc);
+  console.log(data.data.children[1].data);
+
   let art = document.createElement('div');
   art.className = "article";
 
@@ -24,7 +19,7 @@ getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
   thumbnail.className = 'image';
   art.appendChild(thumbnail);
 
-  let head3 = document.createElement('h3');
+  let head3 = document.createElement('span');
   head3.innerHTML = data.data.children[1].data.title;
   head3.className = "title";
   art.appendChild(head3);
@@ -35,7 +30,6 @@ getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
 
   let author = document.createElement('li');
   author.innerHTML = "by " + data.data.children[1].data.author;
-  author.className = 'description';
   ul.appendChild(author);
 
   let dot = document.createElement('li');
@@ -44,7 +38,6 @@ getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
 
   let time = document.createElement('li');
   time.innerHTML = data.data.children[1].data.created_utc;
-  time.className = "description";
   ul.appendChild(time);
 
   let dot2 = document.createElement('li');
@@ -53,7 +46,6 @@ getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
 
   let upcount = document.createElement('li');
   upcount.innerHTML = data.data.children[1].data.ups + " upcounts";
-  upcount.className = 'description';
   ul.appendChild(upcount);
 
   let text = document.createElement('p');
