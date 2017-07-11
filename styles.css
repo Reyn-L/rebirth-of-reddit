@@ -67,6 +67,15 @@ body {
   margin-bottom: 25px;
   padding: 25px;
   font-family: 'Oswald', sans-serif;
+  border: 5px solid transparent;
+}
+
+.article:hover .title {
+  color: #b32400;
+}
+
+.article:hover {
+  border-color: #ff8533;
 }
 
 .title {
