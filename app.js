@@ -55,12 +55,14 @@ Article.prototype.createNodes = function() {
   appendAll(article, [thumbnail, title, info, desc]);
 
   return article;
-}
+};
+
 
 getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
-  data = data.data.children[5].data;
-  console.log(data)
-  const article = new Article(data.thumbnail, data.title, data.author, data.created_utc, data.ups, data.selftext);
+  data.data.children.forEach(article => {
 
-  tent.appendChild(article.createNodes());
+    const art = new Article(article.data.thumbnail, article.data.title, article.data.author, article.data.created_utc, article.data.ups, article.data.selftext);
+    tent.appendChild(art.createNodes());
+  });
+
 });
