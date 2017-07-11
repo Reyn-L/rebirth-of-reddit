@@ -23,12 +23,48 @@ body {
   display: flex;
 
   -webkit-flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 #logoBar {
-  height: 65px;
   position: relative;
+  padding-top: 10px;
+}
+
+#logo {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#addSymbol {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 30px;
+  margin-right: 20px;
+  line-height: 27px;
+  padding: 0 3px;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: #B64326;
+  border: 1px solid orange;
+}
+
+#addSymbol:hover {
+  background-color: #ff6600;
+  color: white;
+}
+
+@media (min-width: 420px) {
+  #logoBar {
+    background-image: url('assets/header_bg.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+  }
+
+  #logo {
+  }
 }
 
 #logoBar {
@@ -36,10 +72,7 @@ body {
 }
 
 .vertical-align {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
 }
 
 #pageBar {
@@ -64,7 +97,7 @@ body {
   height: 375px;
   background-color: white;
   overflow: hidden;
-  margin-bottom: 25px;
+  margin: 0 12px 25px;
   padding: 25px;
   font-family: 'Oswald', sans-serif;
   border: 5px solid transparent;
@@ -107,12 +140,12 @@ body {
   overflow: hidden;
   font-size: 14px;
   color: #333333;
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 715px) {
   .article {
-    width: 400px;
-    height: 480px;
+    width: 270px;
+    height: 375px;
   }
 }
