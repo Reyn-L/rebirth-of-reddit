@@ -20,9 +20,8 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   background-image: url(assets/facebook_grey.svg); }
-
-#fb-logo:hover {
-  background-image: url(assets/facebook_orange.svg); }
+  #fb-logo:hover {
+    background-image: url(assets/facebook_orange.svg); }
 
 #insta-logo {
   display: inline-block;
@@ -31,15 +30,13 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   background-image: url(assets/instagram_grey.svg); }
-
-#insta-logo:hover {
-  background-image: url(assets/instagram_orange.svg); }
+  #insta-logo:hover {
+    background-image: url(assets/instagram_orange.svg); }
 
 .link {
   cursor: pointer; }
-
-.link:hover {
-  color: #e65c00; }
+  .link:hover {
+    color: #e65c00; }
 
 #content {
   margin: 50px auto;
@@ -115,12 +112,10 @@ footer {
   padding: 25px;
   font-family: 'Oswald', sans-serif;
   border: 5px solid transparent; }
-
-.article:hover .title {
-  color: #b32400; }
-
-.article:hover {
-  border-color: #ff8533; }
+  .article:hover .title {
+    color: #b32400; }
+  .article:hover {
+    border-color: #ff8533; }
 
 .title {
   font-size: 20px;

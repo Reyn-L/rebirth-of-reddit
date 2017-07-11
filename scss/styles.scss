@@ -33,11 +33,11 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   background-image: url(assets/facebook_grey.svg);
+  &:hover {
+    background-image: url(assets/facebook_orange.svg);
+  }
 }
 
-#fb-logo:hover {
-  background-image: url(assets/facebook_orange.svg);
-}
 
 #insta-logo {
   display: inline-block;
@@ -46,18 +46,17 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   background-image: url(assets/instagram_grey.svg);
+  &:hover {
+    background-image: url(assets/instagram_orange.svg);
+  }
 }
 
-#insta-logo:hover {
-  background-image: url(assets/instagram_orange.svg);
-}
 
 .link {
   cursor: pointer;
-}
-
-.link:hover {
-  color: $linkHover;
+  &:hover {
+    color: $linkHover;
+  }
 }
 
 #content {
@@ -153,15 +152,15 @@ footer {
   padding: 25px;
   font-family: 'Oswald', sans-serif;
   border: 5px solid transparent;
+  &:hover .title {
+    color: $titleHover;
+  }
+  &:hover {
+    border-color: $articleHover;
+  }
 }
 
-.article:hover .title {
-  color: $titleHover;
-}
 
-.article:hover {
-  border-color: $articleHover;
-}
 
 .title {
   font-size: 20px;
