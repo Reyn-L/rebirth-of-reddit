@@ -5,6 +5,13 @@
 
 body {
   background-image: url(assets/bg.jpg);
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #e65c00;
 }
 
 #content {
@@ -56,20 +63,31 @@ body {
 }
 
 .article {
+
   width: 270px;
   height: 375px;
   background-color: white;
   overflow: hidden;
+
+
+  width: 450px;
+  height: 480px;
+
+  width: 285px;
+  height: 380px;
+
+  border: 5px solid transparent;
   margin-bottom: 25px;
   padding: 25px;
   font-family: 'Oswald', sans-serif;
+
 }
 
 .title {
   font-size: 20px;
   font-weight: 600;
   color: #333333;
-}
+
 
 .image {
   width: 100%;
