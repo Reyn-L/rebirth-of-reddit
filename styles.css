@@ -62,10 +62,33 @@
   border: 1px solid black;
   margin-bottom: 25px;
   padding: 20px;
+  color: #333333;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+
+
 }
-.image{
+
+.image {
   width: 285px;
   height:165px;
+}
+
+.info {
+  list-style-type: none;
+  padding: 10px 0;
+
+}
+
+.info > li {
+  display:  inline;
+  padding: 3px;
+
+}
+
+.description {
+  overflow:hidden;
+  text-overflow: ellipsis;
 }
 
 @media (min-width: 1000px) {
