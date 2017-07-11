@@ -8,53 +8,59 @@ function getJSON(method, url, cb) {
   xhr.send();
 }
 
-getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
-  console.log(data.data.children[1].data);
+function Article(thumbnail, title, author, date, upcount, desc) {
+  this.thumbnail = thumbnail;
+  this.title = title;
+  this.author = 'by ' + author;
+  this.date = date;
+  this.upcount = upcount + ' upcounts';
+  this.desc = desc;
+}
 
-  let art = document.createElement('div');
-  art.className = "article";
+function createEl(type, className, innerText) {
+  const node = document.createElement(type);
+  node.className = className || '';
+  node.innerText = innerText || '';
 
-  let thumbnail = document.createElement('IMG');
-  thumbnail.src = data.data.children[1].data.thumbnail;
-  thumbnail.className = 'image';
-  art.appendChild(thumbnail);
+  return node;
+}
 
-  let head3 = document.createElement('span');
-  head3.innerHTML = data.data.children[1].data.title;
-  head3.className = "title";
-  art.appendChild(head3);
+function appendAll(parentNode, nodes) {
+  nodes.forEach(node => {
+    parentNode.appendChild(node);
+  });
+}
 
-  let ul = document.createElement('ul');
-  ul.className = 'info';
-  art.appendChild(ul);
+Article.prototype.createNodes = function() {
+  const article = createEl('div', 'article');
 
-  let author = document.createElement('li');
-  author.innerHTML = "by " + data.data.children[1].data.author;
-  ul.appendChild(author);
+  const thumbnail = createEl('img', 'image');
+  thumbnail.src = this.thumbnail;
+  const title = createEl('span', 'title', this.title);
 
-  let dot = document.createElement('li');
+  const info = createEl('ul', 'info');
+  const author = createEl('li', null, this.author);
+  const date = createEl('li', null, this.date);
+  const upcount = createEl('li', null, this.upcount);
+
+  const dot = createEl('li');
   dot.innerHTML = "&#8226";
-  ul.appendChild(dot);
+  const dot2 = createEl('li');
+  dot.innerHTML = "&#8226";
 
-  let time = document.createElement('li');
-  time.innerHTML = data.data.children[1].data.created_utc;
-  ul.appendChild(time);
+  const desc = createEl('p', 'description', this.desc);
 
-  let dot2 = document.createElement('li');
-  dot2.innerHTML = "&#8226";
-  ul.appendChild(dot2);
+  appendAll(info, [author, dot, date, dot, upcount]);
 
-  let upcount = document.createElement('li');
-  upcount.innerHTML = data.data.children[1].data.ups + " upcounts";
-  ul.appendChild(upcount);
+  appendAll(article, [thumbnail, title, info, desc]);
 
-  let text = document.createElement('p');
-  text.innerHTML = data.data.children[6].data.selftext;
-  text.className = 'description';
-  art.appendChild(text);
+  return article;
+}
 
-  tent.appendChild(art);
+getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
+  data = data.data.children[5].data;
+  console.log(data)
+  const article = new Article(data.thumbnail, data.title, data.author, data.created_utc, data.ups, data.selftext);
 
-
-
+  tent.appendChild(article.createNodes());
 });
