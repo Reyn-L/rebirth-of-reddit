@@ -39,7 +39,7 @@ getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
   ul.appendChild(author);
 
   let dot = document.createElement('li');
-  dot.innerHTML = "&#8226;";
+  dot.innerHTML = "&#8226";
   ul.appendChild(dot);
 
   let time = document.createElement('li');
@@ -48,7 +48,7 @@ getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
   ul.appendChild(time);
 
   let dot2 = document.createElement('li');
-  dot2.innerHTML = "&#8226;";
+  dot2.innerHTML = "&#8226";
   ul.appendChild(dot2);
 
   let upcount = document.createElement('li');
