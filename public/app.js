@@ -19,7 +19,9 @@ function getPage(url) {
 
     data.data.children.forEach(article => {
 
-      const art = new Article(article.data.thumbnail, article.data.title, article.data.author, article.data.created_utc, article.data.ups, article.data.selftext);
+      const date = moment.unix(article.data.created_utc).from(new Date());
+
+      const art = new Article(article.data.thumbnail, article.data.title, article.data.author, date, article.data.ups, article.data.selftext);
 
       articles.appendChild(art.createNodes());
     });
@@ -91,13 +93,3 @@ Article.prototype.createNodes = function() {
 
   return article;
 };
-
-getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
-  data.data.children.forEach(article => {
-let date = moment.unix(article.data.created_utc).from(new Date());
-
-    const art = new Article(article.data.thumbnail, article.data.title, article.data.author, date, article.data.ups, article.data.selftext);
-    tent.appendChild(art.createNodes());
-  });
-
-});
