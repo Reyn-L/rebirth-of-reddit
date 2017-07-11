@@ -8,10 +8,6 @@
 }
 
 .link:hover {
-color: #e65c00;
-}
-
-.title:hover {
   color: #e65c00;
 }
 
@@ -77,6 +73,14 @@ color: #e65c00;
   color: #333333;
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
+  background-image: linear-gradient(to bottom,
+  rgba(255,225,225,0),
+  rgba(225,225,225,1) 100%);
+
+}
+
+.title:hover {
+  color: #e65c00;
 }
 
 .article:hover {
