@@ -78,7 +78,6 @@ Article.prototype.createNodes = function() {
   const author = createEl('li', null, this.author);
   const date = createEl('li', null, this.date);
   const upcount = createEl('li', null, this.upcount);
-
   const dot = createEl('li');
   dot.innerHTML = "&#8226";
   const dot2 = createEl('li');
@@ -93,14 +92,12 @@ Article.prototype.createNodes = function() {
   return article;
 };
 
+getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
+  data.data.children.forEach(article => {
+let date = moment.unix(article.data.created_utc).from(new Date());
 
-// getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
-//   data.data.children.map(article => {
+    const art = new Article(article.data.thumbnail, article.data.title, article.data.author, date, article.data.ups, article.data.selftext);
+    tent.appendChild(art.createNodes());
+  });
 
-//     const art = new Article(article.data.thumbnail, article.data.title, article.data.author, article.data.created_utc, article.data.ups, article.data.selftext);
-
-//     return art.createNodes();
-//   });
-
-//   ap
-// });
+});
