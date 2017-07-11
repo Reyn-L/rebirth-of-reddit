@@ -1,5 +1,41 @@
 /* jshint esversion: 6*/
-let tent = document.getElementById('content');
+const container = document.getElementById('content');
+//'https://www.reddit.com/r/leagueoflegends.json'
+//https://www.reddit.com/r/Rabbits/
+
+const links = document.querySelectorAll('.link');
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    getPage(e.target.dataset.url);
+  });
+});
+
+getPage('https://www.reddit.com/r/leagueoflegends.json')
+
+function getPage(url) {
+  getJSON('GET', url, function(data) {
+    const articles = document.createElement('div');
+    articles.id = 'articles';
+
+    data.data.children.forEach(article => {
+
+      const art = new Article(article.data.thumbnail, article.data.title, article.data.author, article.data.created_utc, article.data.ups, article.data.selftext);
+
+      articles.appendChild(art.createNodes());
+    });
+
+    appendToContent(container, articles);
+  });
+}
+
+function appendToContent(parentNode, node) {
+  if(parentNode.children.length > 0) {
+    console.log(parentNode.children)
+    parentNode.replaceChild(node, parentNode.children[0])
+  } else {
+    parentNode.appendChild(node);
+  }
+}
 
 function getJSON(method, url, cb) {
   const xhr = new XMLHttpRequest();
@@ -56,7 +92,6 @@ Article.prototype.createNodes = function() {
   return article;
 };
 
-
 getJSON('GET', 'https://www.reddit.com/r/leagueoflegends.json', function(data) {
   data.data.children.forEach(article => {
 let date = moment.unix(article.data.created_utc).from(new Date());
@@ -66,4 +101,3 @@ let date = moment.unix(article.data.created_utc).from(new Date());
   });
 
 });
-

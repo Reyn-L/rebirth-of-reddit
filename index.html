@@ -3,35 +3,45 @@
 <head>
   <link rel="stylesheet" type="text/css" href="./styles.css">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Lato|Oswald" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <title>Rebirth Of Reddit</title>
 </head>
 <body>
-  <div id="logoBar">
-    <img class="vertical-align" src='./assets/header_bg.svg'>
-    <img class="vertical-align" src='./assets/logo.svg'>
-
+<div id="logoBar">
+  <div id='logo'>
+    <img class="vertical-align" src="assets/logo.svg">
   </div>
-  <div id="navbar">
-    <ul id='pageBar'>
-      <li><span class='link'>Random</span></li>
-      <li>&#8226;</li>
-      <li><span class='link'>My Boards</span></li>
-      <li>&#8226;</li>
-      <li><span class='link' id= 'test'>League of Legends</span></li>
-    </ul>
+  <div id='addSymbol'>
+  &plus;
   </div>
-
+</div>
+<div id="navbar">
+  <ul id='pageBar'>
+    <li><span class='link' data-url="https://www.reddit.com/r/Art.json">Art</span></li>
+    <li>&#8226;</li>
+    <li><span class='link' data-url="https://www.reddit.com/r/Rabbits.json">Bunnies</span></li>
+    <li>&#8226;</li>
+    <li><span class='link' data-url="https://www.reddit.com/r/leagueoflegends.json">League of Legends</span></li>
+  </ul>
+</div>
+  
   <div id= "content">
   </div>
+
+<footer>
+  <div id="icon-bar">
+    <div id='fb-logo'></div>
+    <div id="insta-logo"></div>
+  </div>
+</footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js">
   </script>
   <script>
     moment().format();
   </script>
-  <script src= "./app.js"></script>
-
+  <script src= "/app.js"></script>
 </body>
 </html>
